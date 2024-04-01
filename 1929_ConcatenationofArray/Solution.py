@@ -10,14 +10,16 @@ class Solution:
 
 
 class TestSolution(unittest.TestCase):
+    def setUp(self):
+        self.solution = Solution()
+
     def test_getConcatenation_inputNormalArray_returnDuplicateArray(self):
         # Arrange 
         nums = [1,2,1]
         expectedResult = [1,2,1,1,2,1]
-        solution = Solution()
 
         # Act
-        ans = solution.getConcatenation(nums)
+        ans = self.solution.getConcatenation(nums)
 
         # Assert
         self.assertEqual(ans, expectedResult)
@@ -26,10 +28,9 @@ class TestSolution(unittest.TestCase):
         # Arrange 
         nums = [1,3,2,1]
         expectedResult = [1,3,2,1,1,3,2,1]
-        solution = Solution()
 
         # Act
-        ans = solution.getConcatenation(nums)
+        ans = self.solution.getConcatenation(nums)
 
         # Assert
         self.assertEqual(ans, expectedResult)
