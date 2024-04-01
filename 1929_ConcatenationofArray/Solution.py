@@ -1,5 +1,4 @@
 from typing import List
-from parameterized import parameterized, parameterized_class
 import unittest
 
 class Solution:
@@ -11,40 +10,29 @@ class Solution:
 
 
 class TestSolution(unittest.TestCase):
-    def test_getConcatenation(self):
-        test_cases = [
-            [[1,2,1], [1,2,1,1,2,1]],
-            [[1,1,1], [1,1,1,1,1,1]]
-        ]
+    def test_getConcatenation_inputNormalArray_returnDuplicateArray(self):
+        # Arrange 
+        nums = [1,2,1]
+        expectedResult = [1,2,1,1,2,1]
         solution = Solution()
 
-        for inputList, expectedList in test_cases:
-            with self.subTest(inputList=inputList, expectedList=expectedList):
-                print("Input")
-                print(inputList)
+        # Act
+        ans = solution.getConcatenation(nums)
 
-                result = solution.getConcatenation(inputList)
+        # Assert
+        self.assertEqual(ans, expectedResult)
 
-                print("Expected")
-                print(expectedList)
-
-                print("Result")
-                print(result)
-                self.assertEqual(result, expectedList)
-
-    @parameterized.expand([
-                                   [[1,2,1], [1,2,1,1,2,1]]
-    ])
-    def test_parameterized(self, inputList, expectedList):
-        print(inputList)
-        print(expectedList)
-
+    def test_getConcatenation_inputNormalArray_returnDuplicateArray_2(self):
+        # Arrange 
+        nums = [1,3,2,1]
+        expectedResult = [1,3,2,1,1,3,2,1]
         solution = Solution()
-        result = solution.getConcatenation(inputList)
 
-        self.assertEqual(result, expectedList)
+        # Act
+        ans = solution.getConcatenation(nums)
 
-
+        # Assert
+        self.assertEqual(ans, expectedResult)
 
 if __name__ == '__main__':
     unittest.main()
