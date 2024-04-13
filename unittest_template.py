@@ -19,9 +19,10 @@ if args.CreateUnittest:
         '\tdef MethodName():\n'
         '\t\t# TODO : write solution here\n',
         '\t\tpass\n',
-        '\n',
-        '\n',
+        '\n\n',
         'class TestSolution(unittest.TestCase):\n',
+        '\tdef setUp(self):\n',
+        '\t\tself.solution = Solution()\n\n'
         '\tdef test_sampleTest(self):\n',
         '\t\t# Arrange\n',
         '\n',
@@ -29,8 +30,7 @@ if args.CreateUnittest:
         '\n',
         '\t\t# Assert\n',
         '\t\tpass\n',
-        '\n',
-        '\n',
+        '\n\n',
         'if __name__ == "__main__":\n',
         '\tunittest.main()'
     ]
