@@ -1,0 +1,5 @@
+from tests import Test_Solution
+import unittest
+
+if __name__ == '__main__':
+    unittest.main()
